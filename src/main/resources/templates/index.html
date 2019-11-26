@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Index page</title>
+</head>
+<body>
+
+    <h1>Welcome</h1>
+<!--    sending only some attributes -->
+<!--    <span th:text="'Hello, ' + ${firstName} + ' ' + ${lastName} +'!'"></span>-->
+
+    <span th:text="'Hello, ' + ${principal.firstName} + ' ' + ${principal.lastName} +'!'"></span>
+    <br>
+    <a href="/users">User page</a>
+    <br>
+    <a href="/register">Register user</a>
+
+</body>
+</html>

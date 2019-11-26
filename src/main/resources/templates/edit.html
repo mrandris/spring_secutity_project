@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit user</title>
+</head>
+<body>
+
+<h1>Edit user</h1>
+
+<div th:if="${param.success}">
+    <div class="alert alert-info">You've successfully registered
+    </div>
+</div><div th:if="${param.error}">
+    <div class="alert alert-info">Unable to create User!</div>
+</div><form th:action="@{/create}" th:object="${user}" method="post">    <div class="form-group">
+    <label for="firstName" class="control-label">FirstName</label> <input
+        id="firstName" class="form-control" th:field="*{firstName}"/>
+</div>
+    <div class="form-group">
+        <label for="lastName" class="control-label">Last Name</label> <input
+            id="lastName" class="form-control" th:field="*{lastName}"/>
+    </div>
+    <div class="form-group">
+        <label for="username" class="control-label">Username</label> <input
+            id="username" class="form-control" th:field="*{username}"/>
+    </div>
+    <div class="form-group">
+        <label for="password" class="control-label">Password</label> <input
+            id="password" type= "password" class="form-control" th:field="*{password}"/>
+    </div>
+    <button type="submit" class="btn">Create</button></form>
+
+<a href="/index">Index page</a>
+<br>
+<a href="/users">User page</a>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User page</title>
+</head>
+<body>
+    <h1>User page</h1>
+    <br>
+    <table>
+        <thead>
+        <tr>
+            <th> Id </th>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> Username </th>
+            <th> Password </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${users.empty}">
+            <td colspan="2"> No Users Available </td>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}" ></td>
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.password}"></td>
+            <td>  <a th:href="@{'/user/' + ${user.id}}">Edit </a></td>    </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="/index">Index page</a>
+    <br>
+    <a href="/register">Register user</a>
+
+</body>
+</html>
